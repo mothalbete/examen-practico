@@ -1,0 +1,84 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.bloque {
+  
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 300px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.bloque img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+
+.bloque button {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #0078d7; /* azul uniforme */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.bloque button:hover {
+  background-color: #005a9e;
+}
+
+
+#mensaje {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.correcto {
+  color: green;
+}
+
+.incorrecto {
+  color: red;
+}
+
+.final {
+  color: blue;
+}
+#mensaje {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.correcto {
+  color: green;
+}
+
+.incorrecto {
+  color: red;
+}
+
+.final {
+  color: blue;
+}
+
