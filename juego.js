@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     botones.forEach(boton => bloque.appendChild(boton));
   }
 
-  // Mostrar bloque actual
+  
   function mostrarBloque(i) {
     bloques.forEach(b => b.style.display = "none");
     bloques[i].style.display = "block";
@@ -35,10 +35,10 @@ document.addEventListener("DOMContentLoaded", () => {
     mensaje.textContent = "";
   }
 
-  // Mostrar el primero
+  
   mostrarBloque(indice);
 
-  // Listener global
+  
   document.body.addEventListener("click", e => {
     if (e.target.tagName === "BUTTON") {
       if (e.target.classList.contains("true")) {
