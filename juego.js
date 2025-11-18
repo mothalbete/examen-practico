@@ -1,23 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const bloques = Array.from(document.querySelectorAll(".bloque"));
+  const todosLosBloques = Array.from(document.querySelectorAll(".bloque"));
   const mensaje = document.getElementById("mensaje");
 
-  
   let aciertos = 0;
   let errores = 0;
-
-  
-  for (let i = bloques.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [bloques[i], bloques[j]] = [bloques[j], bloques[i]];
-  }
-
   let indice = 0;
 
-  
-  bloques.forEach(b => b.style.display = "none");
+  // Barajar todos los bloques (Fisher-Yates)
+  for (let i = todosLosBloques.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [todosLosBloques[i], todosLosBloques[j]] = [todosLosBloques[j], todosLosBloques[i]];
+  }
 
-  
+  // Seleccionar solo 5 aleatorios
+  const bloques = todosLosBloques.slice(0, 5);
+
+  // Ocultar todos los bloques
+  todosLosBloques.forEach(b => b.style.display = "none");
+
+  // Función para barajar botones dentro de un bloque
   function barajarBotones(bloque) {
     const botones = Array.from(bloque.querySelectorAll("button"));
     for (let i = botones.length - 1; i > 0; i--) {
@@ -27,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     botones.forEach(boton => bloque.appendChild(boton));
   }
 
+  // Mostrar bloque actual
   function mostrarBloque(i) {
     bloques.forEach(b => b.style.display = "none");
     bloques[i].style.display = "block";
@@ -34,10 +36,12 @@ document.addEventListener("DOMContentLoaded", () => {
     mensaje.textContent = "";
   }
 
+  // Mostrar el primero
   mostrarBloque(indice);
 
+  // Listener global para respuestas
   document.body.addEventListener("click", e => {
-    if (e.target.tagName === "BUTTON") {
+    if (e.target.tagName === "BUTTON" && !e.target.id) { // ignorar botón reinicio
       if (e.target.classList.contains("true")) {
         aciertos++;
         mensaje.textContent = "¡Correcto!";
@@ -58,9 +62,12 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   });
-});
 
-document.getElementById("reiniciar").addEventListener("click", () => {
-  location.reload();
+  // Botón de reinicio
+  const reiniciarBtn = document.getElementById("reiniciar");
+  if (reiniciarBtn) {
+    reiniciarBtn.addEventListener("click", () => {
+      location.reload();
+    });
+  }
 });
-
