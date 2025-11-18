@@ -1,3 +1,4 @@
+/* Estilos generales */
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f9;
@@ -8,14 +9,15 @@ body {
 
 h1 {
   color: #333;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
 }
 
+/* Bloques de personajes */
 .bloque {
-  
   margin: 20px auto;
   padding: 20px;
-  max-width: 300px;
+  max-width: 400px;
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -28,11 +30,12 @@ h1 {
   border-radius: 8px;
 }
 
+/* Botones de opciones */
 .bloque button {
   display: block;
   width: 100%;
   margin: 8px 0;
-  padding: 10px;
+  padding: 12px;
   font-size: 16px;
   border: none;
   border-radius: 6px;
@@ -46,26 +49,9 @@ h1 {
   background-color: #005a9e;
 }
 
-
+/* Mensajes */
 #mensaje {
-  font-size: 20px;
-  font-weight: bold;
-  margin: 15px 0;
-}
-
-.correcto {
-  color: green;
-}
-
-.incorrecto {
-  color: red;
-}
-
-.final {
-  color: blue;
-}
-#mensaje {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   margin: 15px 0;
 }
@@ -82,3 +68,54 @@ h1 {
   color: blue;
 }
 
+/* Botón de reinicio */
+#reiniciar {
+  margin-top: 20px;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  background-color: #ff5722; /* naranja llamativo */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#reiniciar:hover {
+  background-color: #e64a19;
+  transform: scale(1.05);
+}
+
+/* ==============================
+   RESPONSIVE PARA MÓVILES
+   ============================== */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .bloque {
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .bloque button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  #mensaje {
+    font-size: 16px;
+  }
+
+  #reiniciar {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+  }
+}
