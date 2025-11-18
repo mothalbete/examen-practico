@@ -62,3 +62,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+document.getElementById("reiniciar").addEventListener("click", () => {
+  location.reload();
+});
+
